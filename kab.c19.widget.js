@@ -992,13 +992,19 @@ class Widget {
 			),
 		});
 
+		// get the new cases for the its and hospitalization
+
+		const hosOldValue = hosData.oldValue != null ? hosData.oldValue : 0;
+		const hosNewCases = hosData.value - hosOldValue;
+
+		const icuOldValue = icuData.oldValue != null ? icuData.oldValue : 0;
+		const icuNewCases = icuData.value - icuOldValue;
+
 		canvas.drawText({
 			text: `KH-Belegung: ${
-				hosData.newCases >= 0
-					? `+${hosData.newCases}`
-					: hosData.newCases
+				hosNewCases >= 0 ? `+${hosNewCases}` : hosNewCases
 			}`,
-			font: Font.semiboldSystemFont(11),
+			font: Font.semiboldSystemFont(10),
 			textColor: this.colours.blue,
 			rect: new Rect(
 				vw(10),
@@ -1011,11 +1017,9 @@ class Widget {
 
 		canvas.drawText({
 			text: `ITS-Belegung: ${
-				icuData.newCases >= 0
-					? `+${icuData.newCases}`
-					: icuData.newCases
+				icuNewCases >= 0 ? `+${icuNewCases}` : icuNewCases
 			}`,
-			font: Font.semiboldSystemFont(11),
+			font: Font.semiboldSystemFont(10),
 			textColor: this.colours.red,
 			rect: new Rect(
 				vw(10),

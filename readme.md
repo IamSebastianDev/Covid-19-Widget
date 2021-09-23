@@ -16,10 +16,10 @@ Die Installation des Widgets ist einfach:
 
 1. Öffne Scriptable und erstelle ein neues Widget. Optional: Wähle einen Titel und ein Icon für dein Widget.
 2. Kopiere den Code aus 'kab.c19.widget.js' in dein Widget.
-3. Unter dem Punkt: 'widgetConfig' -> 'size' kannst du die Größe des Widgets wählen. 
+3. Unter dem Punkt: 'widgetConfig' -> 'size' kannst du die Größe des Widgets wählen.
 4. Füge deinem Homescreen ein Scriptable Widget in der entsprechenden Größe hinzu (Klein oder Mittel).
 5. Gehe auf 'Widget bearbeiten'.
-6. Wähle dein kreirtes Widget als Script aus. 
+6. Wähle dein kreirtes Widget als Script aus.
 7. Verlasse den Bearbeitenmodus.
 
 Auf deinem Homescreen sollte jetzt das Widget erscheinen.
@@ -43,7 +43,7 @@ Die Größe des Widgets. 'small' oder 'medium' sind die zugelassen Werte.
 
 `canvasConfig.offsetY` Die vertikale Verschiebung des Widgets.
 
-## Api 
+## Api
 
 Das Widget benutzt die API der Webseite [krankenhausampelbayern.de](https://krankenhausampelbayern.de). Die Quelle der Daten ist das [lgl Bayern]('https://www.lgl.bayern.de/gesundheit/infektionsschutz/infektionskrankheiten_a_z/coronavirus/karte_coronavirus/index.htm').
 
