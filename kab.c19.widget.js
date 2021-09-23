@@ -995,10 +995,10 @@ class Widget {
 		// get the new cases for the its and hospitalization
 
 		const hosOldValue = hosData.lastValue != null ? hosData.lastValue : 0;
-		const hosNewCases = hosOldValue - hosData.value;
+		const hosNewCases = hosData.value - hosOldValue;
 
 		const icuOldValue = icuData.lastValue != null ? icuData.lastValue : 0;
-		const icuNewCases = icuOldValue - icuData.value;
+		const icuNewCases = icuData.value - icuOldValue;
 
 		canvas.drawText({
 			text: `KH-Belegung: ${
@@ -1122,7 +1122,7 @@ class Widget {
 			// calculate new cases
 
 			const oldValue = data.lastValue != null ? data.lastValue : 0;
-			const newCaseValue = oldValue - data.value;
+			const newCaseValue = data.value - oldValue;
 
 			// create the strings to display
 			const currentValues = `${data.value} / ${data.threshold}`;
@@ -1275,7 +1275,7 @@ class Widget {
 		});
 
 		const vacOldValue = vacData.lastValue != null ? vacData.lastValue : 0;
-		const vacNewCases = vacOldValue - vacData.value;
+		const vacNewCases = vacData.value - vacOldValue;
 
 		canvas.drawText({
 			text: `${
