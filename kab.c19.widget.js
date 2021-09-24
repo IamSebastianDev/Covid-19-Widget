@@ -170,13 +170,29 @@ class Utility {
 		// screen size to widget size mapping for iPhone, excluding the latest iPhone 12 series. iPad size
 		const sizeMap = {
 			// iPad Mini 2/3/4, iPad 3/4, iPad Air 1/2. 9.7" iPad Pro
-			// '768x1024': { small: [0, 0], medium: [0, 0], large: [0, 0] },
+			'768x1024': {
+				small: [141, 141],
+				medium: [305, 144],
+				large: [305, 305],
+			},
 			// 10.2" iPad
-			// '810x1080': { small: [0, 0], medium: [0, 0], large: [0, 0] },
+			'810x1080': {
+				small: [146, 146],
+				medium: [320, 146],
+				large: [320, 320],
+			},
 			// 10.5" iPad Pro, 10.5" iPad Air 3rd Gen
-			// '834x1112': { small: [0, 0], medium: [0, 0], large: [0, 0] },
+			'834x1112': {
+				small: [150, 150],
+				medium: [327, 150],
+				large: [327, 327],
+			},
 			// 10.9" iPad Air 4th Gen
-			// '820x1180': { small: [0, 0], medium: [0, 0], large: [0, 0] },
+			'820x1180': {
+				small: [155, 155],
+				medium: [342, 155],
+				large: [342, 342],
+			},
 			// 11" iPad Pro
 			'834x1194': {
 				small: [155, 155],
@@ -190,7 +206,11 @@ class Utility {
 				large: [382, 332],
 			},
 			// 12 Pro Max
-			// '428x926': { small: [0, 0], medium: [0, 0], large: [0, 0] },
+			'428x926': {
+				small: [170, 170],
+				medium: [364, 170],
+				large: [364, 382],
+			},
 			// XR, 11, 11 Pro Max
 			'414x896': {
 				small: [169, 169],
@@ -198,7 +218,11 @@ class Utility {
 				large: [360, 376],
 			},
 			// 12, 12 Pro
-			// '390x844': { small: [0, 0], medium: [0, 0], large: [0, 0] },
+			'390x844': {
+				small: [158, 158],
+				medium: [338, 158],
+				large: [338, 338],
+			},
 			// X, XS, 11 Pro, 12 Mini
 			'375x812': {
 				small: [155, 155],
@@ -837,7 +861,7 @@ class Widget {
 		// get the data needed for the Widget
 
 		const { hosData, icuData } = this._formatData();
-		console.log({ hosData, icuData });
+		// console.log({ hosData, icuData });
 
 		/*
 
