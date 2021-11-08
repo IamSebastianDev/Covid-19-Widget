@@ -26,13 +26,11 @@ const widgetConfig = {
 	/**
 
         @type { String } 
-        @description the size property is used to either create a small or mediums sized Widget. Both values are possible. Content will be rendered depending on the size of the Widget.
-
-		@beschreibung die größe des Widgets. Zulässige größen sind "small" & "medium". Das Widget hat unterschiedlichen Content je nachdem welche größe du wählst.
+        @description the size property is used to either create a small or mediums sized Widget. Both values are possible. Content will be rendered depending on the size of the Widget. The default value is the config.widgetFamily property which will return a string depeding on the size of the widget. If you want to force the size, you can overwrite this.
 
     */
 
-	size: 'small',
+	size: config.widgetFamily || 'small',
 
 	/**
 
@@ -574,7 +572,7 @@ class UICanvasElement {
 
         @public @description method to draw a circle at a specified center point using the provided parameters. You can either specify a stroke or fill color.
 
-        @param { {} } param1 - the config object provided to the method
+        @param { Object } param1 - the config object provided to the method
         @param { DrawContext } param1.ctx - the drawContext the method will work on
         @param { Point } param1.center - a point object with x & y coordinates that will be the center of the created arc
         @param { Number } param1.radius - the radius of the circle
@@ -1154,6 +1152,10 @@ class Widget {
 				newCaseValue >= 0 ? `+${newCaseValue}` : newCaseValue
 			}`;
 
+			// check for threshold violations
+			const threshold = data.threshold;
+			const value = data.value;
+
 			/*
 
 				The layout for the text segments 
@@ -1180,7 +1182,9 @@ class Widget {
 			canvas.drawText({
 				text: currentValues,
 				font: Font.semiboldSystemFont(13),
-				textColor: this.colours.text,
+				// textColor: this.colours.text,
+				textColor:
+					value > threshold ? this.colours.red : this.colours.text,
 				align: 'center',
 				rect: new Rect(
 					position.x + vw(37),
@@ -1227,7 +1231,7 @@ class Widget {
 				rect: new Rect(
 					position.x,
 					position.y + vh(19),
-					vw(percentage),
+					vw(Math.min(percentage, 100)),
 					vh(11)
 				),
 			});
